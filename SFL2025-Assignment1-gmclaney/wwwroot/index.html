@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Dexter</title>
+    <style>
+       
+        body {
+            background: linear-gradient(135deg, #2c2c2c, #4d4d4d);
+            color: #ffffff;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0 20px;
+        }
+
+       
+        div.container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        #Title {
+            font-size: 3em;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px #000000;
+        }
+
+      
+        #CoverArt {
+            border-radius: 20px;
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            margin: 20px auto;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+            transition: transform 0.3s ease;
+        }
+
+            #CoverArt:hover {
+                transform: scale(1.05);
+            }
+
+        #Rating {
+            font-size: 1.2em;
+            margin: 10px 0 25px 0;
+            color: #ffffff;
+            text-shadow: 1px 1px 5px #000000;
+        }
+
+     
+        #Trailer {
+            width: 100%;
+            max-width: 720px;
+            height: 405px;
+            border-radius: 12px;
+            margin: 20px 0;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+        }
+
+
+        a {
+            color: #ffffff;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+            a:hover {
+                color: #ffcc00;
+                text-decoration: underline;
+            }
+
+
+        #Summary {
+            font-size: 1.1em;
+            line-height: 1.6em;
+            margin: 25px 0;
+        }
+
+   
+        #Actors {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 25px;
+        }
+
+            #Actors li {
+                margin: 8px 0;
+                font-size: 1.05em;
+                padding: 5px 0;
+                border-bottom: 1px solid rgba(255,255,255,0.2);
+            }
+
+                #Actors li:last-child {
+                    border-bottom: none;
+                }
+
+        .hamburger {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            width: 30px;
+            height: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+            .hamburger div {
+                height: 4px;
+                background-color: #ffffff;
+                border-radius: 2px;
+                transition: 0.3s;
+            }
+
+       
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #1c1c1c;
+            padding-top: 60px;
+            transition: 0.3s;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.7);
+            z-index: 1000;
+        }
+
+            .sidebar.active {
+                right: 0;
+            }
+
+            .sidebar ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+                .sidebar ul li {
+                    padding: 15px 20px;
+                    border-bottom: 1px solid rgba(255,255,255,0.1);
+                    cursor: pointer;
+                }
+
+                    .sidebar ul li:hover {
+                        background-color: rgba(255,255,255,0.1);
+                    }
+
+        
+        #SeasonSynopsis {
+            margin-top: 30px;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            background-color: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 12px;
+        }
+
+       
+        @media (max-width: 768px) {
+            #Trailer {
+                height: 230px;
+            }
+
+            #CoverArt {
+                width: 200px;
+                height: 200px;
+            }
+
+            #Title {
+                font-size: 2.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hamburger" onclick="toggleSidebar()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <h1 id="Title">Dexter</h1>
+
+        <img id="CoverArt"
+             src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSbnzvwt75txoxYSx-AmIMUndUx7_pm4jRvUAziLkcw0-Iltk4n"
+             alt="Dexter Cover Art">
+
+        <h5 id="Rating">IMDb Rating: 8.7/10</h5>
+
+        <iframe id="Trailer" src="https://www.youtube.com/embed/YQeUmSD1c3g"
+                title="Dexter (2006) Official Trailer | Michael C. Hall SHOWTIME Series"
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+
+        <p>
+            <a href="https://www.imdb.com/title/tt0773262/" target="_blank">
+                View Dexter on IMDb
+            </a>
+        </p>
+
+        <p id="Summary">
+            Dexter Morgan, a Miami-based blood splatter expert for the police department,
+            leads a secret life as a vigilante serial killer, hunting down criminals who
+            have slipped through the cracks of the justice system.
+        </p>
+
+        <ul id="Actors">
+            <li>Michael C. Hall</li>
+            <li>Jennifer Carpenter</li>
+            <li>David Zayas</li>
+            <li>James Remar</li>
+            <li>C.S. Lee</li>
+        </ul>
+       
+        <div id="SeasonSynopsis">Click a season to see its synopsis.</div>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li onclick="showSeason(1)">Season 1</li>
+            <li onclick="showSeason(2)">Season 2</li>
+            <li onclick="showSeason(3)">Season 3</li>
+            <li onclick="showSeason(4)">Season 4</li>
+            <li onclick="showSeason(5)">Season 5</li>
+            <li onclick="showSeason(6)">Season 6</li>
+            <li onclick="showSeason(7)">Season 7</li>
+            <li onclick="showSeason(8)">Season 8</li>
+        </ul>
+    </div>
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        function toggleSidebar() {
+            sidebar.classList.toggle('active');
+        }
+
+        const synopses = {
+            1: "Season 1: Dexter begins his secret life as a vigilante killer, targeting criminals who escaped justice.",
+            2: "Season 2: Dexter struggles with new challenges as his double life starts attracting attention.",
+            3: "Season 3: Dexter balances a new love interest and a dangerous adversary in Miami.",
+            4: "Season 4: A new serial killer known as the Trinity Killer emerges, putting Dexter to the test.",
+            5: "Season 5: Dexter faces personal loss and confronts dangerous criminals targeting his family.",
+            6: "Season 6: Dexter navigates faith, morality, and a dangerous new enemy.",
+            7: "Season 7: Dexter's secrets are exposed as he faces the manipulations of an old friend.",
+            8: "Season 8: Dexter deals with the consequences of his actions while protecting those he loves."
+        };
+
+        function showSeason(number) {
+            document.getElementById('SeasonSynopsis').innerText = synopses[number];
+            sidebar.classList.remove('active'); 
+        }
+    </script>
+</body>
+</html>
